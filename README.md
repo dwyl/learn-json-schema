@@ -1,4 +1,4 @@
-# Learn JSON Schema
+<!-- # Learn JSON Schema -->
 
 ## _Why?_
 
@@ -6,7 +6,7 @@ Building an **API** is the _single **most important technical activity**_
 on the road to success for a web application/project. <br />
 Even if the API is only "_consumed_" _internally_ in your team/company,
 being crystal clear on exactly which parameters the API accepts as input and
-what format the _response_ will have is referred to as the API "contract".
+what format the _response_ will have. This is referred to as the API "_contract_".
 
 > For _way_ more background reading on building APIs
 see: [_github.com/dwyl/**learn-api-design**_](https://github.com/dwyl/learn-api-design)
@@ -15,10 +15,20 @@ If you have used a REST API you will be familiar with JSON schemas, want to unde
 
 ## _What?_
 
+Defining your "model" as a JSON Schema means it's "portable",
+there are JSON schema validators in
+JavaScript (_obviously_), Ruby, Python, Java, ASP.NET, C/C++ etc.
+because it's an Open Specification (_currently Draft v4_) everyone can
+write a parser/validator
+
+> To be clear, we _prefer_ the succinctness of Hapi's `Joi` validator,
+however we think JSON Schema is more _versatile_.
 
 ## _How?_
 
-The _best_ place to start is with a sample schema:
+The _best_ place to start is with a _sample_ JSON Object (data) and it's corresponding JSON Schema:
+
+
 
 
 
@@ -53,10 +63,15 @@ The _best_ place to start is with a sample schema:
 + Structuring & Reuse:
 https://spacetelescope.github.io/understanding-json-schema/structuring.html
 
-### Validation
+### Validation (_Online_)
 
 + Online Schema Validator: http://jsonschema.net/
 + Alternative Online Schema Validator: http://www.jsonschemavalidator.net/
+
+### Validators (`JavaScript`)
+
++ "TV4" (_the most popular but not the fastest_): http://geraintluff.github.io/tv4/
++ `AJV` (_performance focussed_): https://www.npmjs.com/package/ajv
 
 ### Visualisation
 
@@ -64,14 +79,11 @@ https://spacetelescope.github.io/understanding-json-schema/structuring.html
   + http://jlblcc.github.io/json-schema-viewer/
   + https://navneethg.github.io/jsonschemaviewer/
 
-### Parsing
+### `$ref` Parsing
 
 + `$ref` parser: https://www.npmjs.com/package/json-schema-ref-parser
 (_lets you Parse, Resolve, and Dereference JSON Schema $ref pointers_)
 
-### Validators
-
-+ "TV4" (_the most popular but not the fastest_): http://geraintluff.github.io/tv4/
 
 
 ## Background Reading
@@ -87,3 +99,4 @@ http://apigee.com/about/blog/technology/why-xml-wont-die-xml-vs-json-your-api
 (_concludes that JSON is "better" for simpler APIs but use XML for more complex..._)
 + _Elegant APIs_ with JSON Schema: https://brandur.org/elegant-apis
 + ***Understanding JSON Schema***: https://spacetelescope.github.io/understanding-json-schema/index.html _or_  [UnderstandingJSONSchema.pdf](https://github.com/dwyl/learn-json-schema/files/553730/UnderstandingJSONSchema.pdf)
++ How Heroku API uses JSON Schema: https://blog.heroku.com/heroku-http-api-toolchain
