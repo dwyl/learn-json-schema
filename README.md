@@ -15,7 +15,8 @@ see: [_github.com/dwyl/**learn-api-design**_](https://github.com/dwyl/learn-api-
 ## _What?_
 
 Defining your "model" as a JSON Schema means it's "portable",
-there are JSON schema validators in
+you can load a `.json` file _easily_ in Node.js, Browsers and "Native" clients. <br />
+There are JSON schema validators in
 JavaScript (_obviously_), Ruby, Python, Java, ASP.NET, C/C++ etc.
 Because it's an Open Specification (_currently Draft v4_) anyyone can
 write a parser/validator
@@ -27,8 +28,32 @@ however we think JSON Schema is more _versatile_.
 
 ## _How?_
 
-The _best_ place to start is with a _sample_ JSON Object (data) and it's corresponding JSON Schema:
+Start by visiting: http://jeremydorn.com/json-editor/
 
+
+The _best_ place to start is with a _sample_ JSON Schema
+and it's corresponding (_valid or invalid_) JSON Object (data):
+
+Consider the following _basic_ schema for a `person`:
+
+```js
+{
+  "type": "object",
+  "properties": {
+    "first_name": { "type": "string" },
+    "last_name": { "type": "string" }
+  }
+}
+```
+This is a pretty basic JSON Schema which is very _permissive_.
+The following data would be valid:
+
+```js
+{
+  "first_name": "Georgina",
+  "last_name": "Washington"
+}
+```
 
 
 
@@ -89,6 +114,7 @@ https://spacetelescope.github.io/understanding-json-schema/structuring.html
 
 ## Background Reading
 
++ ***Understanding JSON Schema***: https://spacetelescope.github.io/understanding-json-schema/index.html _or_  [UnderstandingJSONSchema.pdf](https://github.com/dwyl/learn-json-schema/files/553730/UnderstandingJSONSchema.pdf)
 + Stop Comparing JSON and XML: http://www.yegor256.com/2015/11/16/json-vs-xml.html
 (_clearly biased toward XML but makes valid points regarding XPath, XSL and Schema_)
 + XML vs JSON Verbosity Stats:
@@ -99,9 +125,26 @@ for zipped data the "cost" of using XML is 21.3% slower load times..._)
 http://apigee.com/about/blog/technology/why-xml-wont-die-xml-vs-json-your-api
 (_concludes that JSON is "better" for simpler APIs but use XML for more complex..._)
 + _Elegant APIs_ with JSON Schema: https://brandur.org/elegant-apis
-+ ***Understanding JSON Schema***: https://spacetelescope.github.io/understanding-json-schema/index.html _or_  [UnderstandingJSONSchema.pdf](https://github.com/dwyl/learn-json-schema/files/553730/UnderstandingJSONSchema.pdf)
 + How Heroku API uses JSON Schema: https://blog.heroku.com/heroku-http-api-toolchain
 + Schema.org Testing Tool: https://search.google.com/structured-data/testing-tool
 
 
 ## tl;dr
+
+### Why _Not_ XYZ (_Alternative_) Schema...?
+
+We _attempted_ to use several "_alternatives_":
++ [schema.org](http://schema.org) - uses micro-formats or HTML "hypermedia"
+instead of a more "efficient" data format.
++ [GraphQL Schema](http://graphql.org/learn/schema/) - GraphQL
+is _really promising_. We [_used_ GraphQL](https://github.com/dwyl/learn-graphQL)
+for our "Inspirational Search" project and _felt_ the pros & cons.
+It was _good_ for succinctness, however the schema validation and error debugging (_when something is wrong_) was tedious.
+We would often spend _hours_ trying to debug a complex schema without any luck,
+and then someone would spot a missing character
+(_which was not reported in the error message_) and it would "_magically_" work.
++ [`Joi`](https://github.com/hapijs/joi) - superb for backend (node.js)
+validation, concise syntax, however not easy to modularize or extend.
++ XSD (XML Schema Definition) - powerful but way more than what we need and
+xml is not ideal for "full-stack" where JSON can be loaded as a
+_static_ file in Clients and easily used for client-side validation.
