@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "first_name": { "type": "string" },
+    "last_name": { "type": "string" },
+    "birthday": { "type": "string", "format": "date-time" },
+    "address": {
+      "type": "object",
+      "properties": {
+        "street_address": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "country": { "type" : "string" }
+      }
+    }
+  }
+}

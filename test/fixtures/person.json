@@ -1,0 +1,11 @@
+{
+  "first_name": "Georgina",
+  "last_name": "Washington",
+  "birthday": "1732-09-22T10:30:06.000Z",
+  "address": {
+    "street_address": "3200 Mount Vernon Memorial Highway",
+    "city": "Mount Vernon",
+    "state": "Virginia",
+    "country": "United States"
+  }
+}
