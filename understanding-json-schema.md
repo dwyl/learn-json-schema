@@ -38,14 +38,14 @@ Expected Object:
 Now if the submit a the following object:  
 ```js
 {
-	 “first name”:”Mickey”,
+	“first name”:”Mickey”,
 	“last name”: “Mouse”
 }
 ```
 It would fail the validation that we have put in place. But, the following object:  
 ```js
 {
-	 “first name”:”Mickey”,
+	“first name”:”Mickey”,
 	“last name”: “Mouse”,
 	“age”: 100
 }
@@ -68,6 +68,33 @@ It would pass the validation.
 "type": "null"
 + many more to be added here...
 ```
+
+```js
+"type": "string",
+"minLength": 2,
+"maxLength": 5
+```
+
+```js
+"type": "string",
+"pattern": "^sohil$"
+```
+
+```js
+"type": "number",
+"multipleOf": "10",
+"minimum": 0,
+"maximum": 100,
+"exclusiveMaximum": true
+```
+
+_Built in formats_
+- "date-time"
+- "email"
+- "hostname"
+- "ipv4"
+- "ipv6"
+- "uri"
 
 You can also allow for multiple types using the following method"
 
