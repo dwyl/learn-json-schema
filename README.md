@@ -28,11 +28,15 @@ however we think JSON Schema is more _versatile_.
 
 ## _How?_
 
-Start by visiting: http://jeremydorn.com/json-editor/
-
-
 The _best_ place to start is with a _sample_ JSON Schema
-and it's corresponding (_valid or invalid_) JSON Object (data):
+and it's corresponding (_valid or invalid_) JSON Object (data).
+
+> Note: If you want to
+"[***jump in at the deep end***](https://en.wiktionary.org/wiki/in_at_the_deep_end)",
+visit: http://jeremydorn.com/json-editor/
+to get a feel for a detailed schema, the auto-generated HTML form
+for inputting data and a valid JSON document that validates against the schema.
+(_you can come straight back if it feels like too much!_)
 
 Consider the following _basic_ schema for a `person`:
 
