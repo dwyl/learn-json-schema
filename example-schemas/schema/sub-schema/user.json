@@ -1,0 +1,31 @@
+{
+  "id": "user.json#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Contains user details",
+  "properties": {
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "address": {
+      "type":"object",
+      "properties": {
+        "billing_address": {
+          "$ref": "address.json",
+          "example": "../schema-example/address.json#/definitions/address"
+        },
+        "delivery_address": {
+          "$ref": "address.json",
+          "example": "../schema-example/address.json#/definitions/address"
+        }
+      }
+    },
+    "age": {
+      "type":"number",
+      "maxValue": 100
+    }
+  }
+}

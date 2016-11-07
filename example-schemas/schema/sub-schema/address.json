@@ -1,0 +1,30 @@
+{
+  "id": "address.json#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "_stability":"1 - Experimental",
+  "type": "object",
+  "description":"search package holidays",
+  "definitions":{
+    "address" : {
+      "properties": {
+        "street_name": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "properties": {
+    "address": { "$ref" : "#/definitions/address" }
+  },
+  "required": ["address"],
+  "additionalProperties": false
+}

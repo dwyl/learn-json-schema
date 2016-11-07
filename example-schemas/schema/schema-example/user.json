@@ -1,0 +1,23 @@
+[
+  {
+    "first_name": "Sohil",
+    "last_name": "Pandya",
+    "address": {
+      "billing_address": {
+          "street_name": "123 Lorem Ipsum",
+          "city": "London",
+          "postcode": "E2 ABC",
+          "country": "UK"
+      },
+      "delivery_address": {
+          "street_name": "123 Lorem Ipsum",
+          "city": "London",
+          "postcode": "E2 ABC",
+          "country": "UK"
+      }
+    },
+    "age": 100,
+    "country": "country",
+    "electronicMailAddress": ["example1@example.com", "example2@example.com"]
+  }
+]
